@@ -1,0 +1,14 @@
+<?php
+$URLPATH="https://localhost/AIMS/"; 
+$HOSTPATH = $URLPATH;
+$ROOTPATH = $_SERVER['DOCUMENT_ROOT']."/";
+
+$companyImagePath = $URLPATH."uploads/companyphoto/";
+$companyDocumentPath = $URLPATH."uploads/companydocument/";
+$allowedUploadFileExtension = array("jpg", "bmp", "jpeg", "gif", "png");
+
+define('HOSTPATH',$HOSTPATH);
+define('ROOTPATH',$ROOTPATH); 
+define('UPLOADCOMPANYIMAGEPATH',$companyImagePath); 
+define('UPLOADACOMPANYDOCUMENTPATH',$companyDocumentPath); 
+?>
