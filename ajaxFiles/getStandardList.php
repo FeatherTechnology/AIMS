@@ -2,7 +2,7 @@
 include '../ajaxconfig.php';
 
 $standardArr = array();
-$standardQry = $connect->query("SELECT standard_id,standard FROM standard_creation ");
+$standardQry = $connect->query("SELECT standard_id,standard FROM standard_creation order BY std_order ASC");
 $i=0;
 while($standardInfo = $standardQry->fetch()){
     $standardArr[$i]['std_id'] = $standardInfo['standard_id'];

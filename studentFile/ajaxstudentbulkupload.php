@@ -212,6 +212,9 @@ if (isset($_FILES["file"]["type"])) {
                     else if($standard_name == 'XII_Com_BusinessMaths'){
                         $standard = "25";
                     }
+                    else if($standard_name == 'PRE.K.G_Play_Group'){
+                        $standard = "26";
+                    }
                 }
 
                 $previous_school_name = "";

@@ -87,7 +87,7 @@ if (isset($_POST['student_id']) && isset($_POST['standard_id'])) {
     $standard_id = $_POST['standard_id'];
 
     if (is_array($student_id) && is_array($standard_id)) {
-        $particular_std_id = array('14', '15', '16', '17', '18', '19', '20', '21', '22', '23','24','25');
+        $particular_std_id = array('14', '15', '16', '17', '18', '19', '20', '21', '22', '23','24','25','26');
 
         for ($i = 0; $i < count($student_id); $i++) {
             // Handle standard promotion
@@ -102,6 +102,7 @@ if (isset($_POST['student_id']) && isset($_POST['standard_id'])) {
                     case '17': $next_std_id = '22'; break;
                     case '18': $next_std_id = '23'; break;
                     case '24': $next_std_id = '25'; break;
+                    case '26': $next_std_id = '1'; break;
                     default: $next_std_id = $standard_id[$i]; break;
                 }
             }
