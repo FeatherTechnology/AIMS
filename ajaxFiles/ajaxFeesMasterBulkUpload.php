@@ -120,6 +120,9 @@ if(in_array($_FILES["file"]["type"],$allowedFileType)){
                     else if($standard_name == 'XII_Com_BusinessMaths'){
                         $standard_list = "25";
                     }
+                     else if($standard_name == 'PRE.K.G_Play_Group'){
+                        $standard_list = "26";
+                    }
                 }
                 
                 $particulars = "";
