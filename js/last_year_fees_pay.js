@@ -9,15 +9,17 @@ $(document).ready(function(){
       $("#cheque_payment").hide();
       $("#neft_payment").hide();
   
-    } else if(value == "cheque"){
+   } else if (value == "cheque") {
       $("#cash_payment").hide();
       $("#cheque_payment").show();
       $("#neft_payment").hide();
+      getAcademicYearList('#cheque_ledger_name');
     }
-    else if(value == "neft"){
+    else if (value == "neft") {
       $("#cash_payment").hide();
       $("#cheque_payment").hide();
       $("#neft_payment").show();
+      getAcademicYearList('#neft_ledger_name');
     }
   });
   
@@ -68,11 +70,11 @@ $(document).ready(function(){
 }); //Document END///
 
 $(function(){
-  getAcademicYearList(); //Get  Academic Year List.
+  getAcademicYearList('#academic_year'); //Get  Academic Year List.
   getReceiptCode(); //Receipt Number;
   setTimeout(() => {
     getFeesTableFunc();
-  }, 6000);
+  }, 1000);
 });
 
 function getFeesTableFunc(){
@@ -375,24 +377,24 @@ function getCollectedAmount(){
   return totalAmount;
 }
 
-function getAcademicYearList(){ //Getting academic_year list from database.
+function getAcademicYearList(selector) { //Getting academic_year list from database.
   $.ajax({
-      type: 'POST',
-      data: {},
-      url: 'ajaxFiles/getAcademicYearList.php',
-      dataType: 'json',
-      success:function(response){
-          $('#academic_year').empty();
-          $('#academic_year').append("<option value=''>Select Academic Year</option>");
-          var user_academic_year = $('#user_academic_year').val();
-          for(var i=0; i <response.length; i++){
-            var selected = '';
-            if (user_academic_year  == response[i]['academicyear']) {
-              selected  = 'selected';
-            }
-              
-              $('#academic_year').append("<option value='" +response[i]['academicyear']+ "' "+selected+">" +response[i]['academicyear']+ "</option>");
-          }
+    type: 'POST',
+    data: {},
+    url: 'ajaxFiles/getAcademicYearList.php',
+    dataType: 'json',
+    success: function (response) {
+      $('selector').empty();
+      $('selector').append("<option value=''>Select Academic Year</option>");
+      var user_academic_year = $('#user_academic_year').val();
+      for (var i = 0; i < response.length; i++) {
+        var selected = '';
+        if (user_academic_year == response[i]['academicyear']) {
+          selected = 'selected';
+        }
+
+        $(selector).append("<option value='" + response[i]['academicyear'] + "' " + selected + ">" + response[i]['academicyear'] + "</option>");
       }
+    }
   })
 }

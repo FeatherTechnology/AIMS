@@ -376,7 +376,6 @@ if (isset($_GET['upd'])) {
                                                     <div class="form-group">
                                                         <select tabindex="1" type="text" class="form-control" id="cheque_ledger_name" name="cheque_ledger_name" tabindex="1">
                                                             <option value="">Select ledger</option>
-                                                           <option value="2025-2026">2025 - 2026</option> 
                                                         </select>
                                                     </div>
                                                 </td>
@@ -410,7 +409,6 @@ if (isset($_GET['upd'])) {
                                                     <div class="form-group">
                                                         <select tabindex="1" type="text" class="form-control" id="neft_ledger_name" name="neft_ledger_name" tabindex="1">
                                                             <option value="">Select Ledger</option>
-                                                         <option value="2025-2026">2025 - 2026</option> 
                                                         </select>
                                                     </div>
                                                 </td>
