@@ -60,7 +60,7 @@ if ($dateSelect == 'singledate') {
 
         FROM admission_fees af 
         JOIN admission_fees_details afd ON af.id = afd.admission_fees_ref_id 
-        JOIN group_course_fee gcf ON afd.fees_id = gcf.grp_course_id
+       LEFT JOIN group_course_fee gcf ON afd.fees_id = gcf.grp_course_id
         JOIN student_creation sc ON af.admission_id = sc.student_id 
         JOIN student_history sh ON sh.student_id = sc.student_id AND af.academic_year = sh.academic_year
         JOIN standard_creation std ON sh.standard = std.standard_id 
@@ -330,7 +330,7 @@ if ($dateSelect == 'singledate') {
 
         FROM admission_fees af 
         JOIN admission_fees_details afd ON af.id = afd.admission_fees_ref_id 
-        JOIN group_course_fee gcf ON afd.fees_id = gcf.grp_course_id
+       LEFT JOIN group_course_fee gcf ON afd.fees_id = gcf.grp_course_id
         JOIN student_creation sc ON af.admission_id = sc.student_id 
         JOIN student_history sh ON sh.student_id = sc.student_id AND af.academic_year = sh.academic_year
         JOIN standard_creation std ON sh.standard = std.standard_id 
